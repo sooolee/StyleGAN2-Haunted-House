@@ -5,7 +5,7 @@ This fun project was to train StyleGAN algorithm to generated Haunted House imag
 
 I chose StyleGAN2 ADA (Adaptive Discriminator Augmentation) developed by Tero Karras, Miika Aittala, Janne Hellsten, Samuli Laine, Jaakko Lehtinen, Timo Aila (https://arxiv.org/abs/2006.06676), because the model can produce good results using only a few throusand training images, often matching StyleGAN2 results according to the authors.
 
-In reality though, I ended up with only 150 reasonable training images that I could scrap from the web. Considering the limited GPU resources using Google Colab, the size of the dataset was enough to achieve my main goal that was going through the training process from scratch. 
+In reality though, I ended up with only 150 reasonable training images that I could scrap from the web. However, considering the limited GPU resources using Google Colab I decided that the size of the dataset was enough to achieve my main goal: going through the training process from scratch. 
 
 As expected, the output quality wasn't so realistic due to very small training dataset but nonetheless the output images carry the spookiness and creppiness very well! 
 
@@ -15,32 +15,32 @@ As expected, the output quality wasn't so realistic due to very small training d
 
 * To scrap the data from the web, I used Website-Image-Scraper built by JJLIMMM (https://github.com/JJLimmm/Website-Image-Scraper). Initial downloads were just over 500, but aftering cleaning out the duplicates, cartoonish images, and other unusable images, the dataset was reduced to 150. 
 
-* The original images vary in sizes. In order to feed them to StyleGan, they needed to be cropped into squares and also considering the GPU resources, they were resized to 512x512. `process_img.py` was used for this preprocessing. 
+* The original images varied in sizes. In order to feed them to StyleGan, they needed to be cropped into squares. Also considering the GPU resources, they were resized to 512x512. `process_img.py` was used for this preprocessing. 
 
 ## File Structure
 
 Following file structure was used:
 
 - [images](https://drive.google.com/drive/folders/1UQyKToqd3XU2Yf6ymu-aNFf2ceqmWM3q) - Raw images after preprocessing.
-- [datasets](https://drive.google.com/drive/folders/1-5GiS5e4QFuYVsXKvHJPj4yW-MSEIULg) - The raw images were ran through `dataset_tool.py` as recommended and placed in this folder (even after initial preprocessing).
-- [experiments](https://drive.google.com/drive/folders/1-XlNSwj17wK2hzY6bM9cOOKlo8LqFtJR) - Checkpoints and log during the run are recorded here. Checkpoints in pickle files were saved every 10 steps to avoid losing data due to Colab disconnections.
+- [datasets](https://drive.google.com/drive/folders/1-5GiS5e4QFuYVsXKvHJPj4yW-MSEIULg) - The raw images were ran through `dataset_tool.py` as recommended by the authors and placed in this folder (even after initial preprocessing).
+- [experiments](https://drive.google.com/drive/folders/1-XlNSwj17wK2hzY6bM9cOOKlo8LqFtJR) - Checkpoints and logs during the runs are recorded here. Checkpoints in pickle files were saved frequently to avoid losing data due to Colab disconnections.
 - [outputs](https://drive.google.com/drive/folders/1g_JlKig0IzLOitaiaTgyufpXv-y1q5vb) - The output images.
 
 ## Training
 
-- The model was first copied from https://github.com/NVlabs/stylegan2-ada-pytorch.git
+- The model was first cloned from https://github.com/NVlabs/stylegan2-ada-pytorch.git
 
 ```
 !git clone https://github.com/NVlabs/stylegan2-ada-pytorch.git
 ```
 
-- I referenced jeffheaton [YouTube](https://www.youtube.com/watch?v=L3JLzoe-dJU) and [Notebook](https://github.com/jeffheaton/present/blob/master/youtube/gan/colab_gan_train.ipynb) examples for running this model on Google Colab. :thumbsup: 
+- I referenced jeffheaton's [YouTube](https://www.youtube.com/watch?v=L3JLzoe-dJU) and [Notebook](https://github.com/jeffheaton/present/blob/master/youtube/gan/colab_gan_train.ipynb) examples for running this model on Google Colab. :thumbsup: Credits go to jeffheaton.
 
 ## Outputs and Results
 
-- As shown above, the output examples are far from realistic photos but catch well the spookiness of haunted house. Considering the very small training dataset (150 images), this was surprising to me. 
+- As shown above, the output examples are far from realistic photos but catch well the spookiness of haunted house. Considering the very small training dataset (150 images), this was a pleasant surprise to me. 
 
-- A total of 720 steps were ran resulting in 18 checkpoints (one checkpoints per 40 steps).
+- A total of 720 steps were ran resulting in 18 checkpoints (one checkpoint per 40 steps).
 
 - Based on visual inspection, the outputs at around 520 steps seem to be slightly better than the rest of them. 
 
