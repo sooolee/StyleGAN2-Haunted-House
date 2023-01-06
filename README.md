@@ -9,7 +9,7 @@ In reality though, I ended up with only 150 reasonable training images that I co
 
 As expected, the output quality wasn't so realistic due to very small training dataset but nonetheless the output images carry the spookiness and creppiness very well! 
 
-![output-summary]
+![output-summary](https://github.com/sooolee/StyleGAN2-haunted-house/blob/main/images-readme/output-summary.png)
 
 ## Data Scraping and Preprocessing
 
@@ -60,4 +60,4 @@ Following file structure was used:
 
 - Just for fun, I fed one of the output images from StyleGAN2 into Stable Diffusion v2 with a simple prompt 'haunted houses'. I got the following results. Pretty cool!
 
-![sd-summary](https://drive.google.com/drive/folders/1gcahjg5ucDPHma2RmM2wUm5U0jmhvaV4)
+![sd-summary](https://github.com/sooolee/StyleGAN2-haunted-house/blob/main/images-readme/sd-summary.png)
