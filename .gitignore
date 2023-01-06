@@ -1,0 +1,10 @@
+.DS_Store
+datasets/haunted_houses/00000/*.png
+datasets/haunted_houses/dataset.jason
+datasets/**
+experiments/**
+haunted_houses_original/*.jpeg
+haunted_houses_original/*.jpg
+images/haunted_houses/*.jpg
+outputs/**
+Google-Image-Scraper-master/photos
