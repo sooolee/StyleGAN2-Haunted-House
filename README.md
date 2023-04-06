@@ -3,7 +3,7 @@
 
 This fun project was to train StyleGAN algorithm to generated Haunted House images. 
 
-I chose StyleGAN2 ADA (Adaptive Discriminator Augmentation) developed by Tero Karras, Miika Aittala, Janne Hellsten, Samuli Laine, Jaakko Lehtinen, Timo Aila (https://arxiv.org/abs/2006.06676), because the model can produce good results using only a few throusand training images, often matching StyleGAN2 results according to the authors.
+I chose StyleGAN2 ADA (Adaptive Discriminator Augmentation) developed by Tero Karras, Miika Aittala, Janne Hellsten, Samuli Laine, Jaakko Lehtinen, Timo Aila ([article](https://arxiv.org/abs/2006.06676)), because the model can produce good results using only a few throusand training images, often matching StyleGAN2 results according to the authors.
 
 In reality though, I ended up with only 150 reasonable training images that I could scrap from the web. However, considering the limited GPU resources using Google Colab I decided that the size of the dataset was enough to achieve my main goal: going through the training process from scratch. 
 
@@ -13,7 +13,7 @@ As expected, the output quality wasn't so realistic due to very small training d
 
 ## Data Scraping and Preprocessing
 
-* To scrap the data from the web, I used Website-Image-Scraper built by JJLIMMM (https://github.com/JJLimmm/Website-Image-Scraper). Initial downloads were just over 500, but aftering cleaning out the duplicates, cartoonish images, and other unusable images, the dataset was reduced to 150. 
+* To scrap the data from the web, I used Website-Image-Scraper built by [JJLIMMM](https://github.com/JJLimmm/Website-Image-Scraper). Initial downloads were just over 500, but aftering cleaning out the duplicates, cartoonish images, and other unusable images, the dataset was reduced to 150. 
 
 * The original images varied in sizes. In order to feed them to StyleGan, they needed to be cropped into squares. Also considering the GPU resources, they were resized to 512x512. `process_img.py` was used for this preprocessing. 
 
@@ -28,7 +28,7 @@ Following file structure was used:
 
 ## Training
 
-- The model was first cloned from https://github.com/NVlabs/stylegan2-ada-pytorch.git
+- The model was cloned.
 
 ```
 !git clone https://github.com/NVlabs/stylegan2-ada-pytorch.git
